@@ -1,0 +1,16 @@
+{
+    "EmployeeId": "1999",
+    "FirstName": "Hakoona1",
+    "LastName": "Matata",
+    "MiddleName": "",
+    "FirstMiddleName": "Hakoona1 ",
+    "Status": "Full-Time Contract",
+    "JobTitle": "Chief Financial Officer",
+    "SubUnit": "Administration",
+    "Nationality": "Cuban",
+    "MaritalStatus": "Single",
+    "DayDate": "19",
+    "monthDate": "May",
+    "yearDate": "1999",
+    "Gender": "Female"
+}
