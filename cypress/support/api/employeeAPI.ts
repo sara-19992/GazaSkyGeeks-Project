@@ -1,3 +1,5 @@
+import { genericPassword } from "../helpers/generate"
+
 class employee {
 
     elements = {
@@ -19,21 +21,21 @@ class employee {
         }).then((response) => {
             expect(response).property('status').to.equal(200)
             console.log(response.body.data.empNumber)
-            this.addUser(response.body.data.empNumber)
+            this.addUser(response.body.data.empNumber, firstName)
         })
     }
 
-    addUser(id: number) {
+    addUser(id: number, username: string) {
         //creat user login deails for new employee
         cy.request({
             method: 'POST',
             url: '/web/index.php/api/v2/admin/users',
             body: {
                 empNumber: id,
-                password: "hkounou123",
+                password: genericPassword(),
                 status: true,
                 userRoleId: 2,
-                username: "Hakoona11111"
+                username: username
             }
         }).then((response) => {
             expect(response).property('status').to.equal(200);
