@@ -31,10 +31,10 @@ class loginPage {
         this.elements.loginBut().click().should('not.exist')
     }
 
-    forget() {
+    forget(user: any) {
         this.elements.forgetText().click()
         this.elements.resetForm().should('contain', 'Reset Password')
-        this.elements.resetUserName().type('Admin')
+        this.elements.resetUserName().type(user.userName)
         this.elements.resetBut().click().should('not.exist')
         this.elements.resetText().should('contain', 'Reset Password link sent successfully')
     }

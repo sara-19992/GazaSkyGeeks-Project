@@ -1,18 +1,11 @@
-import { genericUsername, genericPassword, genericEmail } from "./generate"
-const baseURL = Cypress.config().baseUrl
+import { initUser } from "../init/initUser"
 
 export const URLs = {
-    users: `${baseURL}/api/users`
+    users: 'https://conduit.productionready.io/api/users'
 }
 
 export default class user {
-
-    static conduitCreateNewUser(payload: any) {
-        cy.api({
-            method: 'POST',
-            url: URLs.users,
-            body: payload
-        })
+    static signupUserAPI() {
+        cy.signupUser(URLs.users, initUser())
     }
-
 }

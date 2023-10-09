@@ -1,4 +1,4 @@
-import { genericPassword } from "../helpers/generate"
+import { genericPassword } from "../helpers/genericFuncs"
 
 class employee {
 
