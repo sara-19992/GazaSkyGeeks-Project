@@ -1,4 +1,6 @@
+import { reject, resolve } from "cypress/types/bluebird"
 import { initUser } from "../init/initUser"
+import userRseponseInt from "../api/response/userAPIResponse"
 
 export const URLs = {
     users: 'https://conduit.productionready.io/api/users'
@@ -6,6 +8,10 @@ export const URLs = {
 
 export default class user {
     static signupUserAPI() {
-        cy.signupUser(URLs.users, initUser())
+        return new Cypress.Promise<userRseponseInt>((resolve, reject) => {
+            cy.signupUser(URLs.users, initUser()).then(() => {
+                resolve('Signup Done')
+            })
+        })
     }
 }
