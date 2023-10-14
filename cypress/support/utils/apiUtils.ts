@@ -4,7 +4,7 @@ import userRseponseInt from "../api/response/userAPIResponse"
 declare global {
     namespace Cypress {
         interface Chainable {
-            signupUser: (url: string, userPayload: userPayloadInt) => Chainable<userRseponseInt>
+            signupUser: (url: string, userPayload: userPayloadInt) => Chainable
         }
     }
 }

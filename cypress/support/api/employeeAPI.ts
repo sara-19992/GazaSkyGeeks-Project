@@ -1,4 +1,4 @@
-import { genericPassword } from "../helpers/genericFuncs"
+import { genericString } from "../helpers/genericFuncs"
 
 class employee {
 
@@ -32,7 +32,7 @@ class employee {
             url: '/web/index.php/api/v2/admin/users',
             body: {
                 empNumber: id,
-                password: genericPassword(),
+                password: genericString(),
                 status: true,
                 userRoleId: 2,
                 username: username

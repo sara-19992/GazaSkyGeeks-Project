@@ -18,6 +18,7 @@ import './commands'
 import '@shelex/cypress-allure-plugin';
 import 'cypress-plugin-api'
 import './utils/apiUtils'
+import './utils/apiOrange'
 import '@cypress/grep'
 const registerCypressGrep = require('@cypress/grep')
 registerCypressGrep()
