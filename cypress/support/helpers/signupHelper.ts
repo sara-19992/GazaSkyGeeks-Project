@@ -1,18 +1,17 @@
-import { genericUsername, genericPassword, genericEmail } from "./generate"
-const baseURL = Cypress.config().baseUrl
+import { reject, resolve } from "cypress/types/bluebird"
+import { initUser } from "../init/initUser"
+import userRseponseInt from "../api/response/userAPIResponse"
 
 export const URLs = {
-    users: `${baseURL}/api/users`
+    users: 'https://conduit.productionready.io/api/users'
 }
 
 export default class user {
-
-    static conduitCreateNewUser(payload: any) {
-        cy.api({
-            method: 'POST',
-            url: URLs.users,
-            body: payload
+    static signupUserAPI() {
+        return new Cypress.Promise<userRseponseInt>((resolve, reject) => {
+            cy.signupUser(URLs.users, initUser()).then(() => {
+                resolve('Signup Done')
+            })
         })
     }
-
 }

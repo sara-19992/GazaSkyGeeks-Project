@@ -10,6 +10,8 @@ class loginPage {
         resetUserName: () => cy.get('[placeholder="Username"]'),
         resetBut: () => cy.get('button[type="submit"]'),
         resetText: () => cy.get('.oxd-text--h6'),
+        logout: () => cy.get('.oxd-userdropdown'),
+        logoutMenue: () => cy.get('.oxd-dropdown-menu')
     }
 
     assertianElem = [
@@ -31,10 +33,16 @@ class loginPage {
         this.elements.loginBut().click().should('not.exist')
     }
 
-    forget() {
+    userLogout() {
+        this.elements.logout().click()
+        this.elements.logoutMenue().contains('Logout').click()
+        // this.elements.password().type(password)
+    }
+
+    forget(user: any) {
         this.elements.forgetText().click()
         this.elements.resetForm().should('contain', 'Reset Password')
-        this.elements.resetUserName().type('Admin')
+        this.elements.resetUserName().type(user.userName)
         this.elements.resetBut().click().should('not.exist')
         this.elements.resetText().should('contain', 'Reset Password link sent successfully')
     }

@@ -1,4 +1,4 @@
-import { genericPassword } from "../helpers/generate"
+import { genericString } from "../helpers/genericFuncs"
 
 class employee {
 
@@ -6,33 +6,36 @@ class employee {
         empLoader: () => cy.get('.oxd-loading-spinner')
     }
 
-    addEmployee(empID: string, firstName: string, lastName: string, middleName: string) {
+    addEmployee(empID: string, firstName: string, lastName: string, middleName: string, username: string, password: string) {
         //add new employee using API
-        cy.request({
-            method: 'POST',
-            url: '/web/index.php/api/v2/pim/employees',
-            body: {
-                empPicture: null,
-                employeeId: empID,
-                firstName: firstName,
-                lastName: lastName,
-                middleName: middleName
-            }
-        }).then((response) => {
-            expect(response).property('status').to.equal(200)
-            console.log(response.body.data.empNumber)
-            this.addUser(response.body.data.empNumber, firstName)
+        return new Cypress.Promise((resolve, reject) => {
+            cy.request({
+                method: 'POST',
+                url: '/web/index.php/api/v2/pim/employees',
+                body: {
+                    empPicture: null,
+                    employeeId: empID,
+                    firstName: firstName,
+                    lastName: lastName,
+                    middleName: middleName
+                }
+            }).then((response) => {
+                expect(response).property('status').to.equal(200)
+                console.log(response.body.data.empNumber)
+                this.addUser(response.body.data.empNumber, username, password)
+                resolve(response.body.data.empNumber)
+            })
         })
     }
 
-    addUser(id: number, username: string) {
+    addUser(id: number, username: string, password: string) {
         //creat user login deails for new employee
         cy.request({
             method: 'POST',
             url: '/web/index.php/api/v2/admin/users',
             body: {
                 empNumber: id,
-                password: genericPassword(),
+                password: password,
                 status: true,
                 userRoleId: 2,
                 username: username

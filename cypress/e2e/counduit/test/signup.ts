@@ -1,17 +1,10 @@
 import user from "../../../support/helpers/signupHelper"
-import { generateUsername, generateEmail, generatePassword } from "../../../support/helpers/generate"
 
-describe('Conduit: Signup Account', () => {
+describe('Conduit: Signup Account', { tags: '@smoke' }, () => {
 
     it('Sign up : create new account', () => {
-        const apiPayload = {
-            user: {
-                username: generateUsername('sarah'),
-                email: generateEmail('sarah'),
-                password: generatePassword()
-            }
-        }
-        //console.log(apiPayload)
-        user.conduitCreateNewUser(apiPayload)
+        user.signupUserAPI().then((resolve) => {
+            cy.log(`${resolve}`)
+        })
     })
 })
