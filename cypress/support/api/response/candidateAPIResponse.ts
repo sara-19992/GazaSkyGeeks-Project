@@ -1,3 +1,5 @@
 export default interface candidateResponseInt {
-    // data: object
+    data: {
+        id: number
+    }
 }

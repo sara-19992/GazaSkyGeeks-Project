@@ -1,5 +1,7 @@
 import candidatePayloadInt from "../api/payloaad/candidateAPIPayload"
 import candidateResponseInt from "../api/response/candidateAPIResponse"
+import 'cypress-file-upload'
+
 
 declare global {
     namespace Cypress {

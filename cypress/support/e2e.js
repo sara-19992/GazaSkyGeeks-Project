@@ -14,13 +14,14 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands'
-import '@shelex/cypress-allure-plugin';
-import 'cypress-plugin-api'
-import './utils/apiUtils'
-import './utils/apiOrange'
-import '@cypress/grep'
-const registerCypressGrep = require('@cypress/grep')
-registerCypressGrep()
+import "./commands";
+import "@shelex/cypress-allure-plugin";
+import "cypress-plugin-api";
+import "./utils/apiUtils";
+import "./utils/apiOrange";
+import "@cypress/grep";
+
+const registerCypressGrep = require("@cypress/grep");
+registerCypressGrep();
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

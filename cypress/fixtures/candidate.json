@@ -8,5 +8,6 @@
     "keywords": null,
     "lastName": "sarah",
     "middleName": "sarah",
-    "vacancyId": 6
+    "vacancyId": 6,
+    "resume": "cypress/fixtures/candidateResume.pdf"
 }

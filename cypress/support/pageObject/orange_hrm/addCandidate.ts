@@ -5,7 +5,13 @@ export default class candidatePage {
         buttons: () => cy.get('.oxd-button'),
         inputElms: () => cy.get('input'),
         saveBut: () => cy.get('button[type="submit"]'),
-        status: () => cy.get('.orangehrm-recruitment-status')
+        status: () => cy.get('.orangehrm-recruitment-status'),
+        addBut: () => cy.get('button[type="button"]'),
+        firstName: () => cy.get('[placeholder="First Name"]'),
+        lastName: () => cy.get('[placeholder="Last Name"]'),
+        emailInput: () => cy.get('[placeholder="Type here"]'),
+        uploadFileInput: () => cy.get('input[type="file"]'),
+        resumeInput: () => cy.get('.oxd-input-group')
     }
 
     addCandidateAPI(contactNumber: string, email: string, firstName: string, lastName: string, middleName: string, vacancyId: number) {
@@ -24,6 +30,20 @@ export default class candidatePage {
         cy.visit(`https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/addCandidate/${id}`)
     }
 
+    addCandidateUI(email: string, firstName: string, lastName: string, filePath: string) {
+        this.elemnts.addBut().contains('Add').click()
+        this.elemnts.firstName().type(firstName)
+        this.elemnts.lastName().type(lastName)
+        this.elemnts.emailInput().eq(0).type(email)
+        this.uploadFile(filePath)
+        this.elemnts.saveBut().click()
+        //assert file name
+        this.elemnts.resumeInput().contains(filePath.split('/')[2])
+    }
+
+    uploadFile(filePath: string) {
+        this.elemnts.uploadFileInput().selectFile(filePath, { force: true })
+    }
     scheduleInterviewCandiate(id: number, title: string, interviewer: string, date: string, time: string) {
         this.visitCandidate(id)
         this.elemnts.buttons().eq(1).click({ force: true })

@@ -1,6 +1,6 @@
 {
     "EmployeeId": "1999",
-    "FirstName": "Hakoona1",
+    "FirstName": "Hakoona1Sarahhhhhhhhhhhh",
     "LastName": "Matata",
     "MiddleName": "",
     "FirstMiddleName": "Hakoona1 ",
@@ -12,5 +12,7 @@
     "DayDate": "19",
     "monthDate": "May",
     "yearDate": "1999",
-    "Gender": "Female"
+    "Gender": "Female",
+    "username": "Sarah1999",
+    "password": "sarah123"
 }

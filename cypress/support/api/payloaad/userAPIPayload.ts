@@ -1,4 +1,4 @@
-export default interface createUserPayload {
+export default interface userPayloadInt {
     user: {
         email: string,
         username: string,
