@@ -44,6 +44,7 @@ export default class candidatePage {
     uploadFile(filePath: string) {
         this.elemnts.uploadFileInput().selectFile(filePath, { force: true })
     }
+
     scheduleInterviewCandiate(id: number, title: string, interviewer: string, date: string, time: string) {
         this.visitCandidate(id)
         this.elemnts.buttons().eq(1).click({ force: true })

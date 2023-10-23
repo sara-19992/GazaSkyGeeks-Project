@@ -14,7 +14,6 @@ let id: any = 0
 
 describe('Login new Employee', () => {
 
-
     beforeEach(() => {
         cy.visit('/web/index.php')
         cy.fixture('employeeInfo').as('EmpInfo')

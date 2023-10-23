@@ -24,6 +24,5 @@ describe('Add Candidate With Upload File', () => {
         cy.get('@CanInfo').then((candicate: any) => {
             candidate.addCandidateUI(candicate.email, candicate.firstName, candicate.lastName, candicate.resume)
         })
-
     })
 })
