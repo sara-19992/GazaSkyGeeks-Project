@@ -19,14 +19,6 @@ describe('Table Verfey Row', () => {
         recruitment.goTorRcruitment()
     })
 
-    // it('Add new candidate use API', () => {
-    //     cy.get('@CanInfo').then((candicate: any) => {
-    //         candidate.addCandidateAPI(candicate.contactNumber, candicate.email, candicate.firstName, candicate.lastName, candicate.middleName, candicate.vacancyId).then((resolve) => {
-    //             // id = resolve
-    //         })
-    //     })
-    // })
-
     it('verfy candidate row', () => {
         //[{vecancy:'fdgd'},{date:'12/10/2017'}]
 

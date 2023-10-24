@@ -50,6 +50,7 @@ class loginPage {
     verfiyElem(message: string) {
         this.assertianElem.find(({ msg }) => msg === message)?.elem;
     }
+
     // requiredElem(message: string, inputPlace:string) {
     //     this.assertianElem.find(({ msg }) => msg === message)?.elem().should('have.attr', 'placeholder', inputPlace);
 

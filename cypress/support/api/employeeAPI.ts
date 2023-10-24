@@ -29,7 +29,7 @@ class employee {
     }
 
     addUser(id: number, username: string, password: string) {
-        //creat user login deails for new employee
+        //create user login details for new employee
         cy.request({
             method: 'POST',
             url: '/web/index.php/api/v2/admin/users',
