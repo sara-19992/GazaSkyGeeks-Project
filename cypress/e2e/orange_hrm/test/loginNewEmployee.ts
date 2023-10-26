@@ -14,7 +14,6 @@ let id: any = 0
 
 describe('Login new Employee', () => {
 
-
     beforeEach(() => {
         cy.visit('/web/index.php')
         cy.fixture('employeeInfo').as('EmpInfo')
@@ -35,7 +34,6 @@ describe('Login new Employee', () => {
     })
 
     afterEach(() => {
-        //delete Employee
         cy.visit('/web/index.php')
         login.userLogin('Admin', 'admin123')
         empAPI.deleteEmployee(id);

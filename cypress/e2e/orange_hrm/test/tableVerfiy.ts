@@ -13,19 +13,11 @@ describe('Table Verfey Row', () => {
         cy.fixture('adminLogin').then((user: any) => {
             login.userLogin(user[0].userName, user[0].password)
         })
-        //go to recruitment Page
+
         cy.fixture('candidate').as('CanInfo')
         cy.fixture('interview').as('InterviewInfo')
         recruitment.goTorRcruitment()
     })
-
-    // it('Add new candidate use API', () => {
-    //     cy.get('@CanInfo').then((candicate: any) => {
-    //         candidate.addCandidateAPI(candicate.contactNumber, candicate.email, candicate.firstName, candicate.lastName, candicate.middleName, candicate.vacancyId).then((resolve) => {
-    //             // id = resolve
-    //         })
-    //     })
-    // })
 
     it('verfy candidate row', () => {
         //[{vecancy:'fdgd'},{date:'12/10/2017'}]
@@ -41,7 +33,6 @@ describe('Table Verfey Row', () => {
                 cy.wrap($el).eq(th.indexOf('vacancy')).should('have.text', data[1]['vacancy'])
             }
             // })
-
             // cy.get('.oxd-table-card').find('.oxd-table-cell').each(($el, index) => {
             //     if (index > 0) {
             //         cy.wrap($el).should('have.text', infoData[searchEmpTb[index - 1]])

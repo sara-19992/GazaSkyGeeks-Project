@@ -7,7 +7,7 @@ declare global {
     namespace Cypress {
         interface Chainable {
             addCandidate: (url: string, candidatePayload: candidatePayloadInt) => Chainable<candidateResponseInt>
-            shortlitCandidate: (url: string) => Chainable
+            shortListCandidate: (url: string) => Chainable
 
         }
     }
@@ -21,7 +21,7 @@ function addCandidate(url: string, candidatePayload: candidatePayloadInt) {
     }).its('body')
 }
 
-function shortlitCandidate(url: string) {
+function shortListCandidate(url: string) {
     return cy.api({
         method: 'PUT',
         url: url,
@@ -30,4 +30,4 @@ function shortlitCandidate(url: string) {
 
 Cypress.Commands.add('addCandidate', addCandidate)
 
-Cypress.Commands.add('shortlitCandidate', shortlitCandidate)
+Cypress.Commands.add('shortListCandidate', shortListCandidate)

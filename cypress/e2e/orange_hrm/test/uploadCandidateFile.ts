@@ -14,7 +14,7 @@ describe('Add Candidate With Upload File', () => {
         cy.fixture('adminLogin').then((user: any) => {
             login.userLogin(user[0].userName, user[0].password)
         })
-        //go to recruitment Page
+
         cy.fixture('candidate').as('CanInfo')
         cy.fixture('interview').as('InterviewInfo')
         recruitment.goTorRcruitment()
@@ -24,6 +24,5 @@ describe('Add Candidate With Upload File', () => {
         cy.get('@CanInfo').then((candicate: any) => {
             candidate.addCandidateUI(candicate.email, candicate.firstName, candicate.lastName, candicate.resume)
         })
-
     })
 })

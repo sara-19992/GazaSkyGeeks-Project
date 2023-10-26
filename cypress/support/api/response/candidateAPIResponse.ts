@@ -1,4 +1,4 @@
-export default interface candidateResponseInt {
+export default interface CandidateResponseInt {
     data: {
         id: number
     }
