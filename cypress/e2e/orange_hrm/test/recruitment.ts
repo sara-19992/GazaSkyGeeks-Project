@@ -12,7 +12,7 @@ describe('Recruitment Functinality', () => {
         cy.fixture('adminLogin').then((user: any) => {
             login.userLogin(user[0].userName, user[0].password)
         })
-        //go to recruitment Page
+
         recruitment.goTorRcruitment()
     })
 

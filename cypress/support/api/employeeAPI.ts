@@ -28,6 +28,7 @@ class employee {
         })
     }
 
+
     addUser(id: number, username: string, password: string) {
         //create user login details for new employee
         cy.request({

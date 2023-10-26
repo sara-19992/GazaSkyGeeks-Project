@@ -22,7 +22,7 @@ describe('Add / Edit / Search Employee', () => {
 
     it('Add new employee use API', () => {
         cy.get('@EmpInfo').then((infoData: any) => {
-            empAPI.addEmployee(infoData.EmployeeId, infoData.FirstName, infoData.LastName, infoData.MiddleName)
+            empAPI.addEmployee(infoData.EmployeeId, infoData.FirstName, infoData.LastName, infoData.MiddleName, infoData.username, infoData.password)
         })
     })
 

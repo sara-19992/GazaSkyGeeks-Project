@@ -15,7 +15,7 @@ describe('Candidates Page Functionality', () => {
         cy.fixture('adminLogin').then((user: any) => {
             login.userLogin(user[0].userName, user[0].password)
         })
-        //go to recruitment Page
+
         cy.fixture('candidate').as('CanInfo')
         cy.fixture('interview').as('InterviewInfo')
         recruitment.goTorRcruitment()
@@ -30,7 +30,7 @@ describe('Candidates Page Functionality', () => {
     })
 
     it('Shortlist a candidate use API', () => {
-        candidate.shortlitCandidateAPI(id)
+        candidate.shortListCandidateAPI(id)
     })
 
     it('schedule interview for a candidate use UI', () => {

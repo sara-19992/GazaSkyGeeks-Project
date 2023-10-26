@@ -42,8 +42,7 @@ describe('Todo List Functinality', () => {
         myTodo.completeTodo('Pay electric bill')
         myTodo.filterTodo('Active')
         myTodo.filterTodo('Completed')
-        //myTodo.filterTodo('All')
-
+        myTodo.filterTodo('All')
     })
 
 })

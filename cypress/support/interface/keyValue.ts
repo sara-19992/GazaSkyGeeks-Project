@@ -1,6 +1,5 @@
 interface keyValue {
-    key: string;
-    value: string;
+  key: string;
+  value: string;
 }
-
-export default keyValue
+export default keyValue;

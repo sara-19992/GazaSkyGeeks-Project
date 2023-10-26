@@ -11,8 +11,12 @@
     "MaritalStatus": "Single",
     "DayDate": "19",
     "monthDate": "May",
-    "yearDate": "1999",
+    "yearDate": "199",
     "Gender": "Female",
-    "username": "Sarah1999",
-    "password": "sarah123"
+    "username": "Sarah1998",
+    "password": "sarah123",
+    "entitlement": "30",
+    "fromDate": "2023-01-01",
+    "leaveTypeId": 8,
+    "toDate": "2023-12-31"
 }

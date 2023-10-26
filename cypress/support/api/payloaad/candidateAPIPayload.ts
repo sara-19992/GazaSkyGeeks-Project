@@ -1,4 +1,4 @@
-export default interface candidatePayloadInt {
+export default interface CandidatePayloadInt {
     comment: null,
     consentToKeepData: boolean,
     contactNumber: string,

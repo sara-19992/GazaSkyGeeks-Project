@@ -34,7 +34,6 @@ describe('Login new Employee', () => {
     })
 
     afterEach(() => {
-        //delete Employee
         cy.visit('/web/index.php')
         login.userLogin('Admin', 'admin123')
         empAPI.deleteEmployee(id);
